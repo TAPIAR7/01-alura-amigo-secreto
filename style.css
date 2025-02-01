@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
 :root {
-    --color-primary: #4B69FD;
+    --color-primary: #38393b;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
+    --color-button: #b80c7e;
+    --color-button-hover: #910662;
     --color-text: #444444;
     --color-white: #FFFFFF;
+    --color-resultado: hsl(318, 96%, 45%);
+
+    --fuente-krona: 'Krona One', sans-serif;
 }
 
 /* Estilos generales */
@@ -44,7 +49,7 @@ body {
     flex: 60%;
     background-color: var(--color-secondary);
     border: 1px solid #000;
-    border-radius: 64px 64px 0 0;
+    border-radius: 64px 64px 64px 64px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,7 +141,7 @@ ul {
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: var(--color-resultado);
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -159,4 +164,19 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.footer{
+    color:var(--color-white);
+    background-color: var(--color-primary);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fuente-krona);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.amigo-secreto-imagen{
+    width: 30%;
+    max-width: 400px;
 }

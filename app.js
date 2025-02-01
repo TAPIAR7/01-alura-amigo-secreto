@@ -1,5 +1,12 @@
 // El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let amigos = [];
+let valorEntrada = document.getElementById('amigo');
+
+valorEntrada.addEventListener("keyup", function(event){
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        agregarAmigo();
+    }});
 
 function agregarAmigo() {
     let nombre = obtenerElementoPorID('amigo');
@@ -18,7 +25,9 @@ function agregarAmigo() {
         agregarListaLi(nombre, 'listaAmigos');
     }
     limpiarCampoEntrada('amigo');
+    valorEntrada.focus();
 }
+
 
 function obtenerElementoPorID(id){
     return document.getElementById(id).value;
@@ -62,10 +71,23 @@ function sortearAmigo(){
         let amigo = amigos[amigoSeleccionado];
         limpiarCampoEntrada('amigo');
         limpiarListaLi('listaAmigos')
-        agregarListaLi(`El amigo secreto sorteado es: ${amigo}`, 'resultado');    
+        agregarListaLi(`El amigo secreto sorteado es: ${amigo}`, 'resultado');
+        removerAmigoDeArray(amigo);    
 
     } else {
         alert('No hay amigos para sortear');
     }
 
 }
+
+function agregarAnoFooter(){
+    let ano = new Date().getFullYear();
+    document.getElementById('footer-banner').innerHTML += ' Copyright ' + ano;
+}
+
+function removerAmigoDeArray(nombreAmigo){
+    amigos = amigos.filter(amigo => amigo !== nombreAmigo);
+}
+
+agregarAnoFooter();
+
