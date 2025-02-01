@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 40px 0 0 40px;
 }
 
 /* Sección de entrada */
